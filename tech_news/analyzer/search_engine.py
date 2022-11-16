@@ -3,7 +3,7 @@ from tech_news.database import search_news
 
 # Requisito 6
 def search_by_title(title):
-    news = search_news({"title": {"$regex": title, "Soptions": "i"}})
+    news = search_news({"title": {"$regex": title, "$options": "i"}})
     list_news = [(new["title"], new["url"]) for new in news]
     return list_news
 
